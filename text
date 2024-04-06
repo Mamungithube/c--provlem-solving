@@ -1,0 +1,22 @@
+#include <iostream>
+#include <string>
+
+int main() {
+    int T;
+    std::cin >> T;
+
+    while (T--) {
+        std::string S, X;
+        std::cin >> S >> X;
+
+        size_t found = S.find(X);
+        while (found != std::string::npos) {
+            S.replace(found, X.length(), "#");
+            found = S.find(X);
+        }
+
+        std::cout << S << std::endl;
+    }
+
+    return 0;
+}
